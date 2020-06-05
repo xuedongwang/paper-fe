@@ -1,0 +1,24 @@
+html {
+  font-family: 'Hiragino Sans GB','Helvetica Neue',Microsoft Yahei,Arial,\5b8b\4f53,sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
