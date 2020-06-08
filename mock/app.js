@@ -13,6 +13,7 @@ const categoryList = require('./category/category-list');
 const articleInfo = require('./article/article-info');
 const articleDetail = require('./article/article-detail');
 const articleComment = require('./article/comment-list');
+const sateInfo = require('./home/sate-info');
 
 const searchTags1 = require('./home/hot-tags1');
 const archives = require('./archives/archives');
@@ -70,6 +71,10 @@ router.get('/article_detail', ctx => {
 
 router.get('/comment_list', ctx => {
   ctx.body = articleComment();
+})
+
+router.get('/site_info', ctx => {
+  ctx.body = sateInfo();
 })
 
 app

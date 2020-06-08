@@ -1,10 +1,10 @@
 <template>
   <div class="pagination" v-if="total > pageSize">
-    <router-link to="/" v-if="currentPage !== 1 && total > 3" data-page="1" class="btnItem">首页</router-link>
-    <router-link :to="currentPage === 2 ? '/' : `/p/${currentPage - 1}`" v-if="currentPage !== 1 && total > 3" class="btnItem">上一页</router-link>
-    <router-link :to="`/p/${item}`" :key="item" v-for="item of displayPageRange" class="btnItem" :class="{active: currentPage === item}">{{ item }}</router-link>
-    <router-link :to="`/p/${currentPage + 1}`" v-if="currentPage !== total && total > 3" class="btnItem">下一页</router-link>
-    <router-link :to="`/p/${totalPage}`" v-if="currentPage !== total && total > 3" class="btnItem">末页</router-link>
+    <div tag="div" @click="handleChangePage(1)" v-if="currentPage !== 1 && total > 3" class="btn">首页</div>
+    <div tag="div" @click="handleChangePage(currentPage-1)" v-if="currentPage !== 1 && total > 3" class="btn">上一页</div>
+    <div tag="div" @click="handleChangePage(item)" :key="item" v-for="item of displayPageRange" class="btn" :class="{active: currentPage === item}">{{ item }}</div>
+    <div tag="div" @click="handleChangePage(currentPage+1)" v-if="currentPage !== total && total > 3" class="btn">下一页</div>
+    <div tag="div" @click="handleChangePage(totalPage)" v-if="currentPage !== total && total > 3" class="btn">末页</div>
   </div>
 </template>
 <script>
@@ -41,9 +41,11 @@ export default {
       return ret;
     }
   },
-  mounted () {},
-  methods: {},
-  components: {}
+  methods: {
+    handleChangePage (currentPage) {
+      this.$emit('onCurrentPageChange', currentPage);
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -54,7 +56,7 @@ export default {
   user-select: none;
   margin: 30px 0;
 }
-.btnItem {
+.btn {
   margin: 5px;
   padding: 2px 10px;
   font-size: 14px;

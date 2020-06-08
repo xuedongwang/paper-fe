@@ -60,9 +60,6 @@ export default {
     html () {
       return marked(this.content)
     }
-  },
-  mounted () {
-    console.log();
   }
 };
 </script>
@@ -70,28 +67,31 @@ export default {
 @import '~github-markdown-css';
 @import '~prismjs/themes/prism-okaidia.css';
 .markdown-content {
-  blockquote {
-    padding: 15px 1rem;
-    font-size: 14px;
-    padding-right: 15px;
-    margin-left: 0;
-    color: #819198;
-    border-left: 6px solid #dce6f0;
-    background: #f2f7fb;
-    line-height: 22px;
-  }
-  p > code {
-    padding: 2px 4px;
-    font-size: 90%;
-    color: #c7254e;
-    background-color: #f9f2f4;
-    border-radius: 4px;
-  }
-  ol > li {
-    list-style: decimal;
-  }
-  ul > li {
-    list-style: disc;
+  /deep/ {
+    blockquote {
+      padding: 15px 1rem;
+      font-size: 14px;
+      padding-right: 15px;
+      margin-left: 0;
+      margin-right: 0;
+      color: #819198;
+      border-left: 6px solid #dce6f0;
+      background: #f2f7fb;
+      line-height: 22px;
+    }
+    p > code {
+      padding: 2px 4px;
+      font-size: 90%;
+      color: #c7254e;
+      background-color: #f9f2f4;
+      border-radius: 4px;
+    }
+    ol > li {
+      list-style: decimal;
+    }
+    ul > li {
+      list-style: disc;
+    }
   }
 }
 </style>

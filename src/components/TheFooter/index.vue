@@ -1,17 +1,25 @@
 <template>
   <footer class="footer">
     <div class="footer-row">
-      <span class="footer-item">Powered by <a href="">Xuedong Wang</a></span>
+      <span class="footer-item">Powered by <router-link to="/">{{ siteInfo.author }}</router-link></span>
     </div>
     <div class="footer-row">
-      <span class="footer-item">@2019 <a href="">xxx博客</a></span>
-      <span class="footer-item">xICP备xxxxxxxx号</span>
+      <span class="footer-item">@2019 <router-link to="/">{{ siteInfo.siteName }}</router-link></span>
+      <span class="footer-item">{{ siteInfo.recordNumber }}</span>
     </div>
   </footer>
 </template>
 <script>
 export default {
-  name: 'TheFooter'
+  name: 'TheFooter',
+  props: {
+    siteInfo: {
+      type: Object,
+      default () {
+        return {};
+      }
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

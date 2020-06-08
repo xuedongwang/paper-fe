@@ -8,7 +8,7 @@
 import AddComment from './AddComment';
 import CommentList from './CommentList';
 export default {
-  name: '',
+  name: 'Comment',
   props: {
     comments: {
       type: Object,

@@ -1,13 +1,13 @@
 <template>
   <header class="header">
     <div class="header-inner">
-      <router-link to="/" class="header-logo">
+      <router-link to="/" class="logo">
         <img src="@/assets/svg/icon.svg" height="22"/>
       </router-link>
       <div class="header-right">
         <nav class="nav-bar">
-          <router-link class="menu-link" to="/archives">归档</router-link>
-          <router-link class="menu-link" to="/about">关于</router-link>
+          <router-link class="link" to="/archives">归档</router-link>
+          <router-link class="link" to="/about">关于</router-link>
         </nav>
         <router-link to="/search" class="search">
           <i class="iconfont icon-sousuo"></i>
@@ -18,11 +18,7 @@
 </template>
 <script>
 export default {
-  name: 'TheHeader',
-  data () {
-    return {
-    };
-  }
+  name: 'TheHeader'
 };
 </script>
 <style lang="scss" scoped>
@@ -44,7 +40,7 @@ export default {
     margin: 0 auto;
     padding: 0 15px;
     box-sizing: border-box;
-    .header-logo {
+    .logo {
       padding: 5px;
       font-size: 16px;
     }
@@ -53,7 +49,7 @@ export default {
       align-items: center;
       .nav-bar {
         display: flex;
-        .menu-link {
+        .link {
           padding: 5px;
           font-size: 14px;
           transition: color 0.2s;
