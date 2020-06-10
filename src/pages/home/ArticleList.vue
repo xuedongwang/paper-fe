@@ -3,7 +3,7 @@
     <div class="article-list">
       <div :key="article.id" class="article-item" v-for="article of articleList">
         <h2 class="title">
-          <router-link :to="`/a/${article.id}`">{{ article.title }}</router-link>
+          <router-link class="link" :to="`/a/${article.id}`">{{ article.title }}</router-link>
         </h2>
         <div class="article-meta">
           <div class="create-at" :title="article.createdAt | dayjs">{{ article.createdAt | timeago }}</div>
@@ -47,7 +47,7 @@ export default {
       font-size: 24px;
       word-break: break-all;
       transition: color .2s;
-      &:hover {
+      &:hover .link {
         color: #3274ff;
       }
     }

@@ -1,6 +1,6 @@
 const state = {
   keepAliveComponents: [],
-  isLoading: false
+  loadingCount: 0
 };
 
 export default state;

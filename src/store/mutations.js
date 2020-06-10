@@ -1,4 +1,5 @@
 import * as types from './mutation-types';
+
 const mutations = {
   [types.ADD_KEEP_ALIVE_COMPONENT] (state, componentName) {
     if (!state.keepAliveComponents.includes(componentName)) {
@@ -7,11 +8,16 @@ const mutations = {
   },
   [types.DELETE_KEEP_ALIVE_COMPONENT] (state, componentName) {
     if (!state.keepAliveComponents.includes(componentName)) {
-      state.keepAliveComponents.splice(state.keepAliveComponents.findIndex(c => c === componentName), 1);
+      const position = state.keepAliveComponents.findIndex((c) => c === componentName);
+      state.keepAliveComponents.splice(position, 1);
     }
   },
-  [types.TOGGLE_LOADING] (state, isShowLoading) {
-    state.isLoading = isShowLoading;
+  [types.TOGGLE_LOADING] (state, isLoading) {
+    if (isLoading) {
+      state.loadingCount++;
+    } else {
+      state.loadingCount--;
+    }
   }
 };
 

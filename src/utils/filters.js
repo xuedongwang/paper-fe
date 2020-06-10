@@ -6,8 +6,8 @@ const filtersFunc = {
   timeago (time, locale = 'zh_CN') {
     return format(time, locale);
   },
-  dayjs (time, format = 'YYYY-MM-DD HH:hh:ss') {
-    return dayjs(time).format(format);
+  dayjs (time, rule = 'YYYY-MM-DD HH:hh:ss') {
+    return dayjs(time).format(rule);
   },
   formatNumber (number) {
     return accounting.formatNumber(number);

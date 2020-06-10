@@ -18,7 +18,7 @@ import ThePagination from '@/components/ThePagination';
 import CategoryList from './CategoryList';
 import ArticleList from './ArticleList';
 export default {
-  name: 'Home',
+  name: 'HomePage',
   data () {
     return {
       total: 0,

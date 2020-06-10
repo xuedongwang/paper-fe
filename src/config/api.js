@@ -6,5 +6,5 @@ export const API = {
   ARCHIVE_LIST: '/archive_list',
   TAG_LIST: '/tag_list',
   CATEGORY: '/category_list',
-  SITE_INFO: '/site_info',
+  SITE_INFO: '/site_info'
 };

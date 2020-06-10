@@ -11,7 +11,7 @@ import Markdown from '@/components/Markdown';
 import Comment from './Comment';
 import ArticleView from './ArticleView';
 export default {
-  name: 'Home',
+  name: 'Article',
   data () {
     return {
       article: {},

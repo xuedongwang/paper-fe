@@ -1,2 +1,3 @@
-export { http } from './http';
+export * from './http';
 export { filters } from './filters';
+export { directives } from './directives';
