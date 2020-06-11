@@ -2,11 +2,10 @@
   <div class="page-view">
     <main class="content">
       <p class="tip-wrapper">
-        搜索到有
-        <span class="keywords">{{ category.count | formatNumber }}</span>
-        篇与
         <span class="keywords">{{ category.keywords }}</span>
-        相关的文章
+        下有
+        <span class="keywords">{{ category.count | formatNumber }}</span>
+        篇文章
       </p>
       <div class="card-list">
         <router-link :to="`/a/${article.id}`" v-for="article of category.list" :key="article.id" class="card-item">
@@ -32,7 +31,7 @@ export default {
   },
   methods: {
     fetchSearch() {
-      const api = CONFIG.API.CATEGORY;
+      const api = CONFIG.API.CATEGORY_ARTICLE;
       $http.get(api)
         .then(res => {
           this.category = res.data;

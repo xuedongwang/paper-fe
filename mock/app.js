@@ -11,12 +11,8 @@ const searchTags = require('./search/tag-list');
 const archiveList = require('./archives/archive-list');
 const categoryList = require('./category/category-list');
 const articleInfo = require('./article/article-info');
-const articleDetail = require('./article/article-detail');
 const articleComment = require('./article/comment-list');
 const sateInfo = require('./home/sate-info');
-
-const searchTags1 = require('./home/hot-tags1');
-const archives = require('./archives/archives');
 
 var getRange = num => {
   return Math.floor(Math.random() * num) + 1
@@ -48,32 +44,17 @@ router.get('/archive_list', async ctx => {
   ctx.body = archiveList();
 })
 
-router.get('/categories', async ctx => {
-  await delay(DELAY_TIME);
-  ctx.body = searchTags1();
-})
-
 router.get('/tag_list', async ctx => {
   await delay(DELAY_TIME);
   ctx.body = searchTags();
 })
 
-router.get('/archives', async ctx => {
-  await delay(DELAY_TIME);
-  ctx.body = archives();
-})
-
-router.get('/category_articles', async ctx => {
+router.get('/search_result', async ctx => {
   await delay(DELAY_TIME);
   ctx.body = categoryList();
 })
 
-router.get('/hot_search_list', async ctx => {
-  await delay(DELAY_TIME);
-  ctx.body = searchTags();
-})
-
-router.get('/category_list', async ctx => {
+router.get('/category_article', async ctx => {
   await delay(DELAY_TIME);
   ctx.body = categoryList();
 })
@@ -81,11 +62,6 @@ router.get('/category_list', async ctx => {
 router.get('/article_info', async ctx => {
   await delay(DELAY_TIME);
   ctx.body = articleInfo();
-})
-
-router.get('/article_detail', async ctx => {
-  await delay(DELAY_TIME);
-  ctx.body = articleDetail();
 })
 
 router.get('/comment_list', async ctx => {

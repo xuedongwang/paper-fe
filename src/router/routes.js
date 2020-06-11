@@ -48,25 +48,25 @@ const routes = [
         }
       },
       {
-        name: 'category',
-        path: 'category/:id',
-        component: () => import('@/pages/category'),
+        name: 'SearchResult',
+        path: 'search-result',
+        component: () => import('@/pages/search-result'),
+        meta: {
+          header: true,
+          footer: true,
+          keeyAlive: true,
+          title: '搜索'
+        }
+      },
+      {
+        name: 'Categories',
+        path: 'categories/:id',
+        component: () => import('@/pages/categories'),
         meta: {
           header: true,
           footer: true,
           keeyAlive: true,
           title: '分类'
-        }
-      },
-      {
-        name: 'about',
-        path: 'about',
-        component: () => import('@/pages/article'),
-        meta: {
-          header: true,
-          footer: true,
-          keeyAlive: true,
-          title: '关于'
         }
       }
     ]

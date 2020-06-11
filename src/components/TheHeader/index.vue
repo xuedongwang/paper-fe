@@ -7,7 +7,6 @@
       <div class="header-right">
         <nav class="nav-bar">
           <router-link class="link" to="/archives">归档</router-link>
-          <router-link class="link" to="/about">关于</router-link>
         </nav>
         <router-link to="/search" class="search">
           <i class="iconfont icon-sousuo"></i>

@@ -1,8 +1,8 @@
 <template>
   <div class="page-view">
     <main class="content">
-      <dl :key="archive.year" class="archive" v-for="archive of archives.list">
-        <dt class="year">{{ archive.year | dayjs('YYYY') }}</dt>
+      <dl :key="archive.year" class="archive" v-for="archive of archivesComp">
+        <dt class="year">{{ archive.year }}</dt>
         <dd :key="article.id" class="item" v-for="article of archive.list">
           <router-link :to="`/a/${article.id}`" class="title">
             <time class="create-at">{{ article.createDate | timeago }}</time>{{ article.title }}
@@ -13,6 +13,7 @@
   </div>
 </template>
 <script>
+import { sortBy, groupBy, map } from 'lodash';
 export default {
   name: 'Archives',
   data () {
@@ -22,6 +23,16 @@ export default {
   },
   mounted () {
     this.fetchArchives ();
+  },
+  computed: {
+    archivesComp () {
+      const { list } = this.archives;
+      const group = groupBy(list, article => new Date(article.createDate).getFullYear());
+      return map(group, (value, key) => ({
+          year: key,
+          list: value
+        })).reverse();
+    }
   },
   methods: {
     fetchArchives () {

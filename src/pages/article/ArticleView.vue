@@ -9,12 +9,11 @@
     </div>
     <div class="copyright-wrapper">
       <div class="copyright" v-if="article.isOriginal">
-        <div class="author">作者：Xuedong Wang</div>
+        <div class="author">作者：{{ article.author }}</div>
         <p class="description">© 文章版权为xx博客所有，转载请注明来源和原文链接。</p>
       </div>
-      <p class="description" v-else>原文链接：{ article.originalUrl }</p>
       <div class="last-modified">
-        上次修改<div class="time">2019-08-12 14:10:29 xxx </div>
+        上次修改：<time class="time" :title="article.lastModified | dayjs">{{ article.lastModified | timeago }}</time>
       </div>
     </div>
     <div class="article-footer">
@@ -26,16 +25,11 @@
       <div class="comment-wrapper">
         <p class="more-read">更多阅读:</p>
         <div class="recommend">
-          <router-link to="/a/dadasdasd" class="article">
-            <h3 class="title">MAT 分析 Heap Dump 需要关注的指标</h3>
+          <router-link v-for="article of article.moreRead" :key="article.id" :to="`/a/${article.id}`" class="article">
+            <h3 class="title">{{ article.name }}</h3>
             <div class="meta">
-              <time class="date">Aug 08, 2019</time>
-            </div>
-          </router-link>
-          <router-link to="/a/dadasdasd" class="article">
-            <h3 class="title">MAT 分析 Heap Dump 需要关注的指标</h3>
-            <div class="meta">
-              <time class="date">Aug 08, 2019</time>
+              <time class="date">{{ article.createDate | dayjs('MMM DD, YYYY') }}</time>
+              <!-- <time class="date">Aug 08, 2019</time> -->
             </div>
           </router-link>
         </div>

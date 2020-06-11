@@ -2,7 +2,7 @@
   <div class="page-view">
     <main class="content">
       <ArticleView :article="article"/>
-      <Comment :comments="comments"/>
+      <!-- <Comment :comments="comments"/> -->
     </main>
   </div>
 </template>
@@ -47,6 +47,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .page-view {
+  padding-bottom: 20px;
   .content {
     max-width: 780px;
     width: 90%;

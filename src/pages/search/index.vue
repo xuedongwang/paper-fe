@@ -11,7 +11,7 @@
         <p class="help-guide">👇 The following tabs can help you!</p>
         <ul class="tag-list">
           <li v-for="tag of hotSearch.list" :key="tag.id" class="tag">
-            <router-link :to="`/category/${tag.id}`"># {{ tag.name }} ({{ tag.count }})</router-link>
+            <router-link :to="`/search-result?keywords=${tag.name}`"># {{ tag.name }} ({{ tag.count }})</router-link>
           </li>
         </ul>
       </div>
@@ -40,7 +40,7 @@ export default {
   }
 };
 </script>
-<style lang="scss" module>
+<style lang="scss" scoped>
 .page-view {
   padding: 60px 0;
   color: #313131;

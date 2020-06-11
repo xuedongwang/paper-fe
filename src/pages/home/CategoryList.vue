@@ -8,7 +8,7 @@
           v-for="category of categoryList" 
           :title="category.name" 
           :key="category.id" 
-          :to="`/category/${category.id}`"
+          :to="`/categories/${category.id}`"
         >
         {{ category.name }}
         </router-link>
