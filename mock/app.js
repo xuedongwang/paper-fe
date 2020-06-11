@@ -33,9 +33,19 @@ router.get('/article_list', async ctx => {
   ctx.body = homeArticleList();
 });
 
-router.get('/hot_tags', async ctx => {
+router.get('/category_list', async ctx => {
   await delay(DELAY_TIME);
   ctx.body = homeHotTags();
+})
+
+router.get('/site_info', async ctx => {
+  await delay(DELAY_TIME);
+  ctx.body = sateInfo();
+})
+
+router.get('/archive_list', async ctx => {
+  await delay(DELAY_TIME);
+  ctx.body = archiveList();
 })
 
 router.get('/categories', async ctx => {
@@ -46,11 +56,6 @@ router.get('/categories', async ctx => {
 router.get('/tag_list', async ctx => {
   await delay(DELAY_TIME);
   ctx.body = searchTags();
-})
-
-router.get('/archive_list', async ctx => {
-  await delay(DELAY_TIME);
-  ctx.body = archiveList();
 })
 
 router.get('/archives', async ctx => {
@@ -86,11 +91,6 @@ router.get('/article_detail', async ctx => {
 router.get('/comment_list', async ctx => {
   await delay(DELAY_TIME);
   ctx.body = articleComment();
-})
-
-router.get('/site_info', async ctx => {
-  await delay(DELAY_TIME);
-  ctx.body = sateInfo();
 })
 
 app
