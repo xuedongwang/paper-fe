@@ -3,7 +3,7 @@
     <main class="content">
       <p class="tip-wrapper">
         搜索到有
-        <span class="keywords">{{ searchResult.count | formatNumber }}</span>
+        <span class="keywords">{{ searchResult.total | formatNumber }}</span>
         篇与
         <span class="keywords">{{ searchResult.keywords }}</span>
         相关的文章
@@ -12,7 +12,7 @@
         <router-link :to="`/a/${article.id}`" v-for="article of searchResult.list" :key="article.id" class="card-item">
           <h3 class="title">{{ article.title }}</h3>
           <div class="meta">
-            <time class="create-at">{{ article.meta.createDate }}</time>
+            <time class="create-at">{{ article.createDate | dayjs('YYYY年MM月DD日') }}</time>
           </div>
         </router-link>
       </div>

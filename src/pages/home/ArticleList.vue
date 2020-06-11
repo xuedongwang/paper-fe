@@ -10,7 +10,7 @@
           <div class="view-count">{{ article.commentCount | formatNumber }}次浏览</div>
           <div class="comment-count">{{ article.commentCount | formatNumber }}条评论</div>
         </div>
-        <p class="description">{{ article.articleShortDesc }}</p>
+        <p class="description">{{ article.description }}</p>
       </div>
     </div>
   </section>

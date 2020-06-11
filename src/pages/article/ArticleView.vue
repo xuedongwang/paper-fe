@@ -2,7 +2,7 @@
   <article class="article">
     <h2 class="title">{{ article.title }}</h2>
     <div class="article-meta">
-      <time class="createDate">{{ article.createDate | dayjs('YYYY年MM月DD日') }}</time>
+      <time class="create-at">{{ article.createDate | dayjs('YYYY年MM月DD日') }}</time>
     </div>
     <div class="article-content">
       <Markdown :content="article.content"></Markdown>
@@ -28,7 +28,7 @@
           <router-link v-for="article of article.moreRead" :key="article.id" :to="`/a/${article.id}`" class="article">
             <h3 class="title">{{ article.name }}</h3>
             <div class="meta">
-              <time class="date">{{ article.createDate | dayjs('MMM DD, YYYY') }}</time>
+              <time class="date">{{ article.createDate | dayjs('YYYY年MM月DD日') }}</time>
               <!-- <time class="date">Aug 08, 2019</time> -->
             </div>
           </router-link>
@@ -63,7 +63,7 @@ export default {
   }
   .article-meta {
     margin-top: 10px;
-    .createDate {
+    .create-at {
       color: #aaa;
       font-size: 14px;
     }

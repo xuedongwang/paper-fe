@@ -5,7 +5,7 @@ const data = () => Mock.mock({
     author: 'XueDong Wang',
     authorSite: 'https://www.wangxuedong.com/',
     siteName: 'xxxx博客',
-    recordNumber: '陕ICP备xxxxxxx号-2'
+    recordInfo: '陕ICP备xxxxxxx号-2'
   }
 });
 

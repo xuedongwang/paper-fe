@@ -5,7 +5,7 @@
     </div>
     <div class="footer-row">
       <span class="footer-item">@2019 <router-link to="/">{{ siteInfo.siteName }}</router-link></span>
-      <span class="footer-item">{{ siteInfo.recordNumber }}</span>
+      <span class="footer-item">{{ siteInfo.recordInfo }}</span>
     </div>
   </footer>
 </template>

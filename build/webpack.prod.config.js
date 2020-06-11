@@ -96,7 +96,7 @@ const config = {
   ]
 };
 
-if (process.env.BUILD_ENV === 'analyze') {
+if (process.env.RUN_ENV === 'analyze') {
   config.plugins.push(new BundleAnalyzerPlugin());
 }
 

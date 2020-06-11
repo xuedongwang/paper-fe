@@ -2,34 +2,23 @@
   <div class="page-view">
     <main class="content">
       <ArticleView :article="article"/>
-      <!-- <Comment :comments="comments"/> -->
     </main>
   </div>
 </template>
 <script>
 import Markdown from '@/components/Markdown';
-import Comment from './Comment';
 import ArticleView from './ArticleView';
 export default {
   name: 'Article',
   data () {
     return {
-      article: {},
-      comments: {}
+      article: {}
     };
   },
   mounted () {
     this.fetchArticle();
-    this.fetchComents();
   },
   methods: {
-    fetchComents () {
-      const api = CONFIG.API.COMMENT_LIST;
-      $http.get(api)
-        .then(res => {
-          this.comments = res.data;
-        })
-    },
     fetchArticle () {
       const api = CONFIG.API.ARTICLE_INFO;
       $http.get(api)
@@ -40,7 +29,6 @@ export default {
   },
   components: {
     Markdown,
-    Comment,
     ArticleView
   }
 };

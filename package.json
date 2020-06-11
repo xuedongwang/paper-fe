@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config ./build/webpack.dev.config.js",
+    "dev:mock": "cross-env RUN_ENV=mock webpack-dev-server --config ./build/webpack.dev.config.js",
     "build": "webpack --config ./build/webpack.prod.config.js",
-    "build:analyze": "cross-env BUILD_ENV=analyze webpack --config ./build/webpack.prod.config.js",
+    "build:analyze": "cross-env RUN_ENV=analyze webpack --config ./build/webpack.prod.config.js",
     "commit": "git pull && git add . && git commit -m 'commit' && git push",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"

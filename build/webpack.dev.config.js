@@ -88,4 +88,6 @@ const config = {
   ]
 };
 
+console.log(process.env.RUN_ENV);
+
 module.exports = config;
