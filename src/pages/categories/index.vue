@@ -11,7 +11,7 @@
         <router-link :to="`/a/${article.id}`" v-for="article of category.list" :key="article.id" class="card-item">
           <h3 class="title">{{ article.title }}</h3>
           <div class="meta">
-            <time class="create-at">{{ article.meta.createDate }}</time>
+            <time class="create-at">{{ article.createDate }}</time>
           </div>
         </router-link>
       </div>

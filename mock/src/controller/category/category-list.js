@@ -8,9 +8,7 @@ const data = () => Mock.mock({
     'list|1-30': [{
       id: () => Random.id(),
       title: () => Random.title(),
-      meta: {
-        createDate: () => Random.date()
-      }
+      createDate: () => Random.date()
     }]
   }
 });
