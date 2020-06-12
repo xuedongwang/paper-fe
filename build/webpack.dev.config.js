@@ -2,6 +2,7 @@ const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { rootDir, outputDir } = require('./config');
 const { VueLoaderPlugin } = require('vue-loader');
+const webpack = require('webpack');
 
 const config = {
   mode: 'development',
@@ -84,10 +85,11 @@ const config = {
     new VueLoaderPlugin(),
     new HTMLWebpackPlugin({
       template: path.join(rootDir, 'index.html')
+    }),
+    new webpack.DefinePlugin({
+      RUN_ENV: process.env.RUN_ENV
     })
   ]
 };
-
-console.log(process.env.RUN_ENV);
 
 module.exports = config;
