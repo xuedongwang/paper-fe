@@ -10,7 +10,8 @@ const data = () => Mock.mock({
       id: () => Random.id(),
       title: () => Random.ctitle(1, 30),
       createDate: () => Random.date('T'),
-      commentCount: () => Random.natural(),
+      commentCount: () => Random.natural(0, 100000),
+      viewCount: () => Random.natural(0, 100000),
       description: () => Random.cparagraph()
     }]
   }

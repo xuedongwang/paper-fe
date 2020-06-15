@@ -9,7 +9,7 @@ const searchResult = require('./controller/search/searchResult');
 const articleInfo = require('./controller/article/articleInfo');
 const sateInfo = require('./controller/home/sateInfo');
 
-const DELAY_TIME = 500;
+const DELAY_TIME = 100;
 
 const routes = router => {
   router.get('/article_list', async ctx => {

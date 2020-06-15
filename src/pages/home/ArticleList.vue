@@ -7,7 +7,7 @@
         </h2>
         <div class="article-meta">
           <div class="create-at" :title="article.createdAt | dayjs">{{ article.createdAt | timeago }}</div>
-          <div class="view-count">{{ article.commentCount | formatNumber }}次浏览</div>
+          <div class="view-count">{{ article.viewCount | formatNumber }}次浏览</div>
           <div class="comment-count">{{ article.commentCount | formatNumber }}条评论</div>
         </div>
         <p class="description">{{ article.description }}</p>
