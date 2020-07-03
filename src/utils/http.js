@@ -5,7 +5,8 @@ import {
 } from '@/store/mutation-types';
 
 const httpConfig = {
-  baseURL: '//localhost:9999'
+  // baseURL: '//localhost:9999'
+  baseURL: 'https://service-rv97w2h2-1300036153.gz.apigw.tencentcs.com/'
 };
 
 const httpInstance = axios.create(httpConfig);

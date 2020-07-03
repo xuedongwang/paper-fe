@@ -1,10 +1,10 @@
 <template>
   <div class="pagination" v-if="total > pageSize">
-    <div tag="div" @click="handleChangePage(1)" v-if="currentPage !== 1 && total > 3" class="btn">首页</div>
+    <div tag="div" @click="handleChangePage(1)" v-if="currentPage !== 1 && total > 3" class="btn first">首页</div>
     <div tag="div" @click="handleChangePage(currentPage-1)" v-if="currentPage !== 1 && total > 3" class="btn">上一页</div>
-    <div tag="div" @click="handleChangePage(item)" :key="item" v-for="item of displayPageRange" class="btn" :class="{active: currentPage === item}">{{ item }}</div>
+    <div tag="div" @click="handleChangePage(item)" :key="item" v-for="item of displayPageRange" class="btn page" :class="{active: currentPage === item}">{{ item }}</div>
     <div tag="div" @click="handleChangePage(currentPage+1)" v-if="currentPage !== total && total > 3" class="btn">下一页</div>
-    <div tag="div" @click="handleChangePage(totalPage)" v-if="currentPage !== total && total > 3" class="btn">末页</div>
+    <div tag="div" @click="handleChangePage(totalPage)" v-if="currentPage !== total && total > 3" class="btn last">末页</div>
   </div>
 </template>
 <script>
@@ -55,25 +55,33 @@ export default {
   justify-content: center;
   user-select: none;
   margin: 30px 0;
-}
-.btn {
-  margin: 5px;
-  padding: 2px 10px;
-  font-size: 14px;
-  line-height: 1.625;
-  color: #666;
-  border: 1px solid #e7e7e7;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all .2s;
-  text-decoration: none;
-  &.active {
-    background: #333;
-    color: #fff;
+  .btn {
+    margin: 5px;
+    padding: 2px 10px;
+    font-size: 14px;
+    line-height: 1.625;
+    color: #666;
+    border: 1px solid #e7e7e7;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all .2s;
+    text-decoration: none;
+    &.active {
+      background: #333;
+      color: #fff;
+    }
+    &:hover {
+      background: #333;
+      color: #fff;
+    }
   }
-  &:hover {
-    background: #333;
-    color: #fff;
+}
+@media only screen and (max-width: 768px) {
+  .btn {
+    &.first,
+    &.last {
+      display: none;
+    }
   }
 }
 </style>

@@ -94,14 +94,9 @@ export default {
 }
 @media only screen and (max-width: 768px) {
   .card-list {
-    grid-template-columns: repeat(2, 47%);
+    grid-template-columns: repeat(2, 47%) !important;
     grid-column-gap: 6%;
   }
 }
 
-@media only screen and (max-width: 667px) {
-  .card-list {
-    grid-template-columns: 100%;
-  }
-}
 </style>

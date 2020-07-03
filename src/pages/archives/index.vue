@@ -86,6 +86,7 @@ export default {
       .create-at {
         display: block;
         width: 80px;
+        flex-shrink: 0;
         font-size: 14px;
         color: #aaa;
       }

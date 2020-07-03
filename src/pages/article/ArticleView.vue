@@ -139,12 +139,13 @@ export default {
         @media only screen and (max-width: 720px) {
           .article {
             width: 90%;
+            &:first-child {
+              display: none;
+            }
           }
         }
       }
     }
   }
 }
-
-
 </style>
