@@ -1,7 +1,7 @@
 <template>
   <div class="page-view">
     <main class="content">
-      <dl :key="archive.year" class="archive" v-for="archive of archivesComp">
+      <dl :key="archive.year" class="archive" v-for="archive of formatData">
         <dt class="year">{{ archive.year }}</dt>
         <dd :key="article.id" class="item" v-for="article of archive.list">
           <router-link :to="`/a/${article.id}`" class="title">
@@ -13,33 +13,35 @@
   </div>
 </template>
 <script>
-import { sortBy, groupBy, map } from 'lodash';
+import { groupBy } from 'lodash';
 export default {
   name: 'Archives',
   data () {
     return {
-      archives: {}
+      archives: {},
+      formatData: []
     };
   },
   mounted () {
     this.fetchArchives ();
   },
-  computed: {
-    archivesComp () {
-      const { list } = this.archives;
-      const group = groupBy(list, article => new Date(article.createDate).getFullYear());
-      return map(group, (value, key) => ({
-          year: key,
-          list: value
-        })).reverse();
-    }
-  },
   methods: {
+    archivesComp (archives) {
+      const { list } = archives;
+      const group = groupBy(list, article => new Date(article.createDate).getFullYear());
+      return Object.keys(group).map(key => {
+        return {
+          year: key,
+          list: group[key]
+        }
+      }).reverse();
+    },
     fetchArchives () {
       const api = CONFIG.API.ARCHIVE_LIST;
       $http.get(api)
         .then(res => {
           this.archives = res.data;
+          this.formatData = this.archivesComp(res.data);
         })
     }
   }

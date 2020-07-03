@@ -2,6 +2,7 @@ const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { rootDir, outputDir } = require('./config');
 const { VueLoaderPlugin } = require('vue-loader');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const webpack = require('webpack');
 
 const config = {
@@ -88,7 +89,8 @@ const config = {
     }),
     new webpack.DefinePlugin({
       RUN_ENV: process.env.RUN_ENV
-    })
+    }),
+    new LodashModuleReplacementPlugin()
   ]
 };
 
