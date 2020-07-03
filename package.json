@@ -7,6 +7,7 @@
     "dev": "webpack-dev-server --config ./build/webpack.dev.config.js",
     "build": "webpack --config ./build/webpack.prod.config.js",
     "build:analyze": "cross-env RUN_ENV=analyze webpack --config ./build/webpack.prod.config.js",
+    "deploy": "sls",
     "commit": "git pull && git add . && git commit -m 'commit' && git push",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
@@ -41,6 +42,7 @@
     "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.2",
+    "serverless": "^1.74.1",
     "url-loader": "^4.1.0",
     "vue-loader": "^15.9.2",
     "vue-style-loader": "^4.1.2",

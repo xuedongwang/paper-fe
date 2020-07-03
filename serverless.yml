@@ -6,6 +6,6 @@ myvuepress:
     code:
       src: ./dist # Upload static files
       index: index.html
-      error: 404.html
+      error: index.html
     region: ap-guangzhou
     bucketName: my-bucket

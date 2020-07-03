@@ -12,6 +12,7 @@ $ git clone https://github.com/xuedongwang/paper-fe.git
 $ npm i
 $ npm run dev // 开发
 $ npm run buuld // 构建
+$ npm run deploy //部署
 ```
 ## 说明
 在开发阶段，借鉴了一些他人博客中我觉得设计的好看的部分，一些图片、icon等素材皆来自于互联网，侵权删除，邮箱：email@wangxuedong.com。
