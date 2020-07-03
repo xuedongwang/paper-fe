@@ -41,6 +41,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import '~@/assets/scss/color';
 .page-view {
   color: #313131;
   box-sizing: border-box;
@@ -54,7 +55,7 @@ export default {
       color: #5f5f5f;
       .keywords {
         padding: 0 5px;
-        color: #3274ff;
+        color: $color-text-active;
         font-weight: bold;
       }
     }

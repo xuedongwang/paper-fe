@@ -41,6 +41,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import '~@/assets/scss/color';
 .page-view {
   padding: 60px 0;
   color: #313131;
@@ -101,7 +102,7 @@ export default {
           background: #fff;
           line-height: 1.625;
           &:hover {
-            color: #3274ff;
+            color: $color-text-active;
           }
         }
       }

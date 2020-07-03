@@ -23,6 +23,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import '~@/assets/scss/color';
 .footer {
   position: absolute;
   bottom: 0;
@@ -50,7 +51,7 @@ export default {
     color: #999;
   }
   a:hover {
-    color: #3274ff;
+    color: $color-text-active;
   }
 }
 </style>

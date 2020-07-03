@@ -13,6 +13,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import '~@/assets/scss/color';
 .add-comment {
   color: #656D78;
   font-size: 13px;
@@ -41,7 +42,7 @@ export default {
     &:focus {
       position: relative;
       z-index: 1;
-      box-shadow: 0 0 0 1px #3274ff;
+      box-shadow: 0 0 0 1px $color-text-active;
     }
   }
   .text-area {
@@ -64,7 +65,7 @@ export default {
     cursor: pointer;
     transition: all .12s;
     &:hover {
-      background: #3274ff;
+      background: $color-text-active;
       color: #fff;
     }
   }

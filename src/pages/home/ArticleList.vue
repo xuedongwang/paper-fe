@@ -29,6 +29,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import '~@/assets/scss/color';
 .article-wrapper {
   width: 66%;
   padding: 015px;
@@ -48,7 +49,7 @@ export default {
       word-break: break-all;
       transition: color .2s;
       &:hover .link {
-        color: #3274ff;
+        color: $color-text-active;
       }
     }
     .article-meta {

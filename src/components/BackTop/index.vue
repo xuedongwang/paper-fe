@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
-    <div v-show="show" class="backTop">
-      <i @click="handleBackTop" class="icon-huidaodingbu iconfont backTopIcon"></i>
+    <div v-show="show" class="back-top">
+      <i @click="handleBackTop" class="icon-huidaodingbu iconfont back-top-icon"></i>
     </div>
   </transition>
 </template>
@@ -16,6 +16,7 @@ export default {
     };
   },
   mounted () {
+    this.throttleFunc = throttle(this.scrollCallback);
     this.bindWindowScroll();
   },
   methods: {
@@ -31,27 +32,30 @@ export default {
       };
       requestAnimationFrame(animationWidth);
     },
+    scrollCallback () {
+      this.show  = this.top() > SHOW_GO_TO_BACK_DISTANCE;
+    },
     bindWindowScroll () {
-      window.addEventListener('scroll', throttle((e) => {
-        this.show  = this.top() > SHOW_GO_TO_BACK_DISTANCE;
-      }, 300));
+      window.addEventListener('scroll', this.throttleFunc);
     }
   },
-  components: {}
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.throttleFunc);
+  }
 };
 </script>
 <style lang="scss" scoped>
-.backTop {
+.back-top {
   position: fixed;
   z-index: 9999;
   bottom: 50px;
   right: 50px;
   font-size: 30px;
-}
-.backTopIcon {
-  font-size: 40px;
-  color: #333;
-  cursor: pointer;
+  .back-top-icon {
+    font-size: 40px;
+    color: #333;
+    cursor: pointer;
+  }
 }
 
 .fade-enter-active,

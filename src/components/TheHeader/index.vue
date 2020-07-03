@@ -21,6 +21,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import '~@/assets/scss/color';
 .header {
   position: fixed;
   top: 0;
@@ -55,7 +56,7 @@ export default {
           color: inherit;
           text-decoration: none;
           &:hover {
-            color: #3274ff;
+            color: $color-text-active;
           }
           &:not(:first-child) {
             margin-left: 10px;
